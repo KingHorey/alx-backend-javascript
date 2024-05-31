@@ -12,9 +12,9 @@ export default class HolbertonCourse {
       throw new TypeError('Length must be a number');
     }
     if (!Array.isArray(students) || !students.every((x) => typeof (x) === 'string')) {
-      this._students = students;
-    } else {
       throw new TypeError('Students must be an array of strings');
+    } else {
+      this._students = students;
     }
   }
 
