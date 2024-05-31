@@ -1,2 +1,5 @@
 node_modules/*
 *-main.js
+*.json
+babel.config.js
+.eslintrc.js
