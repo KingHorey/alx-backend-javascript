@@ -26,8 +26,8 @@ export default class Currency {
 	else {
 		throw new TypeError("Code must be a string")
 	}
-	displayFullCurrency() {
-		return (`${this._name} ${this._code}`);
-	}
+  }
+  displayFullCurrency() {
+    return (`${this._name} ${this._code}`);
   }
 }
