@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
+
 export default class airport {
   constructor(name, code) {
     this._name = name;
