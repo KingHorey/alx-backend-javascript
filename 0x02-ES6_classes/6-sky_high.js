@@ -1,36 +1,38 @@
-import Building from './5-building.js'
+import Building from './5-building';
 
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
-export default class SkyHighBuilding{
-  constructor(sqft=Building._sqft, floors) {
-	this._sqft = sqft;
-	this._floors = floors;
+export default class SkyHighBuilding extends Building {
+  constructor(sqft, floors) {
+    super(sqft);
+    this._sqft = sqft;
+    this._floors = floors;
   }
+
   get sqft() {
-	return this._sqft;
+    return this._sqft;
   }
+
   set sqft(value) {
-	if (value instanceof Building) {
-		this._sqft = value;
-	}
-	else {
-		throw new TypeError("Value must be an instanceof Building");
-	}
+    if (value instanceof Building) {
+      this._sqft = value;
+    } else {
+      throw new TypeError('Value must be an instanceof Building');
+    }
   }
 
   get floors() {
-	return this._floors;
+    return this._floors;
   }
+
   set floors(value) {
-	if (typeof (value) === 'number') {
-		this._floors = value;
-	}
-	else {
-		throw new TypeError("Value must be a number");
-	}
+    if (typeof (value) === 'number') {
+      this._floors = value;
+    } else {
+      throw new TypeError('Value must be a number');
+    }
   }
 
   evacuationWarningMessage() {
-	return `Evacuate slowly the ${this._floors} floors`;
+    return `Evacuate slowly the ${this._floors} floors`;
   }
 }
