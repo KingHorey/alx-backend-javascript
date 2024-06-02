@@ -6,13 +6,12 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   const user = signUpUser(firstName, lastName);
 
   return Promise.allSettled([photo, user]).then((result) => {
-    result.map((x) => (
+    const results = result.map((x) => (
       {
         status: x.status,
         value: x.value || x.message,
       }
      ));
-     console.log(result);
-     return result;
+     return results;
     }).catch((err) => console.error(err));
 }
