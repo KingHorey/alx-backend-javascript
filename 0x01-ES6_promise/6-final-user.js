@@ -9,7 +9,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     const results = result.map((x) => (
       {
         status: x.status,
-        value: x.value || x.reason.message,
+        value: x.value || `Error: ${x.reason.message}`,
       }
     ));
     return results;
