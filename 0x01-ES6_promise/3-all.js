@@ -7,5 +7,5 @@ export default function handleProfileSignup() {
   return Promise.all([photo, user]).then((y) => {
     const [photo, user] = y;
     console.log(`${photo.body} ${user.firstName} ${user.lastName}`);
-  }).catch(() => console.error('Signup system offline'));
+  }).catch((err) => console.error('Signup system offline', err));
 }
