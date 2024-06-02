@@ -1,4 +1,4 @@
-[./jsPromise.jpeg](JS PROMISE)
+![./jsPromise.jpeg](JS PROMISE)
 
 # JS promises
 
