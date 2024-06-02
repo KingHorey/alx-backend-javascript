@@ -12,5 +12,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         value: x.value || x.message,
       }
     ));
+    return result;
   }).catch((err) => console.error(err));
 }
