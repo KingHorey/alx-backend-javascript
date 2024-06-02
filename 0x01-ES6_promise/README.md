@@ -1,4 +1,4 @@
-[https://miro.medium.com/v2/resize:fit:2796/1*1Qg0RsRkXp0SdHLnVUwUDA.jpeg](Js Promise)
+[./jsPromise.jpeg](JS PROMISE)
 
 # JS promises
 
