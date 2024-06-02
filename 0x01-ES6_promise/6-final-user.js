@@ -11,7 +11,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         status: x.status,
         value: x.value || x.message,
       }
-    ));
-    return result;
-  }).catch((err) => console.error(err));
+     ));
+     console.log(result);
+     return result;
+    }).catch((err) => console.error(err));
 }
