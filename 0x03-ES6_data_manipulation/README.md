@@ -1,4 +1,4 @@
-![](https://media.geeksforgeeks.org/wp-content/uploads/20230831124926/What-is-Data-Manipulation.png)
+![Data Manipulation: GeekforGeeks](https://media.geeksforgeeks.org/wp-content/uploads/20230831124926/What-is-Data-Manipulation.png)
 
 # Data Manipulation
 
