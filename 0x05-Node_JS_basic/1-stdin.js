@@ -1,19 +1,19 @@
 process.stdin.setEncoding('utf8');
 
 process.on('SIGINT', () => {
-  process.stdout.write('This important software is now closing\n');
+  console.log('This important software is now closing');
 });
 
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+console.log('Welcome to Holberton School, what is your name?');
 let input = '';
 if (process.stdin.isTTY) {
   process.stdin.on('readable', () => {
     let input = process.stdin.read();
     if (input !== null) {
       input = input.trim();
-      process.stdout.write(`Your name is: ${input}\n`);
+      console.log(`Your name is: ${input}`);
       process.on('SIGINT', () => {
-        process.stdout.write('This important software is now closing\n');
+        console.log('This important software is now closing');
       });
     }
   });
@@ -24,7 +24,7 @@ if (process.stdin.isTTY) {
 
   process.stdin.on('end', () => {
     input = input.trim();
-    process.stdout.write(`Your name is: ${input}\n`);
-    process.stdout.write('This important software is now closing\n');
+    console.log(`Your name is: ${input}`);
+    console.log('This important software is now closing');
   });
 }
