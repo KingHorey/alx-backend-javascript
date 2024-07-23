@@ -1,5 +1,9 @@
 process.stdin.setEncoding('utf8');
 
+process.on('SIGINT', () => {
+  process.stdout.write('This important software is now closing\n');
+});
+
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 let input = '';
 if (process.stdin.isTTY) {
@@ -8,6 +12,9 @@ if (process.stdin.isTTY) {
     if (input !== null) {
       input = input.trim();
       process.stdout.write(`Your name is: ${input}\n`);
+      process.on('SIGINT', () => {
+        process.stdout.write('This important software is now closing\n');
+      });
     }
   });
 } else {
