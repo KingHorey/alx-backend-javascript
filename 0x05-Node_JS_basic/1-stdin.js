@@ -8,10 +8,9 @@ process.stdin.on('readable', () => {
   if (input !== null) {
     input = input.trim();
     console.log('Your name is:', input);
-    process.stdin.end();
   }
 });
 
-process.stdin.on('end', () => {
+process.on('exit', () => {
   console.log('This important software is now closing');
 });
