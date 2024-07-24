@@ -12,3 +12,5 @@ const server = http.createServer(httpListener);
 server.listen(port, host, () => {
   console.log(`server running on ${port}`);
 });
+
+module.exports = server;
