@@ -1,30 +1,18 @@
 const http = require('http');
 const countStudents = require('./3-read_file_async');
 
-const httpListener = (req, res) => {
-  switch (req.url) {
-    case '/': {
-      res.writeHead(200);
-      res.end('Hello Holberton School!');
-      break;
-    }
-    case '/students': {
-      res.writeHead(200);
-      let output = '';
-      const consoleCapture = process.stdout.write;
-      process.stdout.write = (data) => {
-        output += data;
-      };
-      countStudents(process.argv[2])
-        .then(() => {
-          res.end(`This is the list of our students\n${output}`);
-        })
-        .catch((err) => res.end(err.message));
-      process.stdout.write = consoleCapture;
-      break;
-    }
-    default:
-      res.end('Hello Holberton School!');
+const httpListener = async (req, res) => {
+  if (req.url === '/') {
+    res.end('Hello Holberton School!');
+  } else if (req.url === '/students') {
+    let output = '';
+    const consoleCapture = process.stdout.write;
+    process.stdout.write = (data) => {
+      output += data;
+    };
+    await countStudents(process.argv[2]);
+    process.stdout.write = consoleCapture;
+    res.end(output);
   }
 };
 
