@@ -1,8 +1,9 @@
 const fs = require('fs');
 
+/* eslint no-unused-vars: "error" */
 function countStudents(path) {
   return new Promise((resolve, reject) => {
-    const data = fs.readFile(path, 'utf8', (err, data) => {
+    fs.readFile(path, 'utf8', (err, data) => {
       if (err || !data) {
         reject(new Error('Cannot load the database'));
         return;
