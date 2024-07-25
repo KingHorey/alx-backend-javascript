@@ -2,6 +2,7 @@ const http = require('http');
 const countStudents = require('./3-read_file_async');
 
 const httpListener = async (req, res) => {
+  res.writeHead(200);
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
